@@ -2,7 +2,7 @@ package npower.company;
 
 import java.util.Scanner;
 
-public class ArraySearch {
+public class ArrayLinearSearch {
     public static void main(String[] args) {
         Scanner in = new Scanner((System.in));
 
