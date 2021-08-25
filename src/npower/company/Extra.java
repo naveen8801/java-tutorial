@@ -1,5 +1,6 @@
 package npower.company;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Extra {
@@ -9,32 +10,21 @@ public class Extra {
         while(t>0){
             int a = in.nextInt();
             int b = in.nextInt();
-            int c = in.nextInt();
-
-            int ans = TellMeOutingOrNot(a,b,c);
+            int ans = TellMeAnswer(a,b);
             System.out.println(ans);
             
             t--;
         }
     }
 
-    static int TellMeOutingOrNot(int a,int b,int c) {
-        int z= 0;
-        if(a==0){
-            z++;
-        }
-        if(b==0){
-            z++;
-        }if(c==0){
-            z++;
+    static int TellMeAnswer(int a , int b){
+        float max = 0;
+        for(int i = Math.min(a,b)+1; i < Math.max(a,b) ; i++){
+            float check = (b-i)/2 + (i-a)/2;
+            max = Math.max(check,max);
         }
 
-        if(z!=0 && z!=3){
-            return 1;
-        }
-        else{
-            return 0;
-        }
-
+        return (int)max;
     }
+
 }
