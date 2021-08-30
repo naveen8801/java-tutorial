@@ -2,6 +2,8 @@ package npower.company;
 
 import java.util.Scanner;
 
+// Index = value - 1;
+
 public class CaseCheck {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
