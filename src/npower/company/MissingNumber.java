@@ -12,7 +12,7 @@ public class MissingNumber {
     static int missingNumber(int[] nums) {
         int n = 0;
         while(n < nums.length){
-            int correct = nums[n];
+            int correct = nums[n]; // Correct index of current element
             if(nums[n] < nums.length && nums[n]!=nums[correct]){
                 swapArr(nums , n , nums[n]);
             }

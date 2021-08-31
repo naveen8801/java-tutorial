@@ -17,11 +17,12 @@ public class CyclicSort {
     static void sortCyclic(int[] arr){
         int i = 0;
         while(i < arr.length){
-            if(arr[i]-1==i){
-                i++;
+            int correct = arr[i] - 1; // Correct index of current element
+            if(arr[i]!=arr[correct]){
+                swapArr(arr , i , arr[i] - 1 );
             }
             else{
-                swapArr(arr , i , arr[i] - 1 );
+                i++;
             }
         }
     }
