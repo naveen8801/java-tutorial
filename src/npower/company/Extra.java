@@ -8,7 +8,7 @@ public class Extra {
         long t = in.nextInt();
         while(t > 0){
             int n = in.nextInt();
-            long s = in.nextInt();
+            int s = in.nextInt();
             int[] arr = new int[n];
             for (int i =0;i<n;i++){
                 arr[i] = i+1;
@@ -19,31 +19,16 @@ public class Extra {
         }
     }
 
-    static int TellMeAnswer(int[] arr,int n,long s){
+    static int TellMeAnswer(int[] arr,int n,int s){
 
-        int pos = 0;
-
-        int[] left = new int[n];
-        int[] right = new int[n];
-
-        left[0] = 0;
-        right[n-1] = 0;
-
-        for (int i=1;i<arr.length;i++){
-            left[i] = left[i-1] + arr[i-1];
+        int pos = (n*(n+1))/2 - s;
+        if(pos<=n && pos >=1){
+            return pos;
+        }
+        else{
+            return -1;
         }
 
-        for (int i=n-2;i>=0;i--){
-            right[i] = right[i+1] + arr[i+1];
-        }
-
-        for (int i = 0;i<n;i++){
-            if(left[i]+right[i]==s){
-                return i+1;
-            }
-        }
-
-        return -1;
 
     }
 
